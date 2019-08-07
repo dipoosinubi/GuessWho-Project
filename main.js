@@ -7,7 +7,15 @@ let words = ["arsenal", "aston-villa", "bournemouth", "brighton", "burnley", "ch
 let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-
 // randomize words 
 let word = words[Math.floor(Math.random() * words.length)];
 
+console.log(word);
+// create '*' based on the length of the word
+
+let hiddenWord= [];
+  for (let  i = 0; i < word.length; i++){
+      hiddenWord.push('*');
+  }
+
+  console.log (hiddenWord);
