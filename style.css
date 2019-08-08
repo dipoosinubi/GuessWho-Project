@@ -1,6 +1,10 @@
 body {
-    background-image: url("images/soccerbackground.jpg");
+    color: white;
+    background-image: url("images/soccerball.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+h1{
+    color: black;
+}

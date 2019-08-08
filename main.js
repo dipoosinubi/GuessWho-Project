@@ -7,10 +7,13 @@ let words = ["ARSENAL", "BOURNEMOUTH", "BRIGHTNON", "BURNLEY", "CHELSEA", "EVERT
 let correctGuess;
 let wrongGuesses;
 let chances = 6;
+let pickedLetter = [];
 
 let blanks = document.getElementById("blanks");
 // creates word letters to choose from.
 let alphabets = document.getElementById("buttons");
+
+
 for (let i = 65; i < 91; i++) {
     let letters = document.createElement("input");
     letters.type = "button";
@@ -30,18 +33,18 @@ console.log(word);
 for (let i = 0; i < word.length; i++) {
     let hiddenWord = document.createElement('span');
     hiddenWord.innerHTML = "_";
+    hiddenWord.value = String.fromCharCode(i)
     blanks.appendChild(hiddenWord);
 }
 
 function checkWord() {
+    let picked = this.innerHTML;
     for (let i = 0; i < word.length; i++) {
-        if (this.value !== word[i].charAt(0)) {
-            document.getElementsByName('span').innerHTML = "_";
-            wrongGuesses += 1;
-            words
-        } else if (this.value === word[i]) {
-            document.getElementsByName('span').innerHTML = this.value;
-            correctGuess += 1
+        if (word[i] === picked) {
+            document.getElementsByClassName('span')[i].innerHTML = picked;
+            correctGuess += 1;
+        } else if (word[i] !== picked) {
+            chances -= 1;
         }
     }
 }
