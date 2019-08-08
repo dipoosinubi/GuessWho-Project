@@ -24,7 +24,7 @@ console.log(word);
 let blanks = document.getElementById("blanks");
 
 for (let i = 0; i < word.length; i++) {
-    let hiddenWord = document.createElement('li');
+    let hiddenWord = document.createElement('span');
     hiddenWord.innerHTML = "*";
     blanks.appendChild(hiddenWord);
 }
