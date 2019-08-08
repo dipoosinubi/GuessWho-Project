@@ -38,15 +38,17 @@ for (let i = 0; i < word.length; i++) {
     } else {
       hiddenWord.innerHTML = "_";
     }
-    break
     blanks.appendChild(hiddenWord);
 }
 
-function checkWord() {
-    let picked = this.innerHTML;
+function checkWord(event) {
+    console.log('event', event.target)
+
+    let picked = event.target.value;
+    console.log('picked', picked)
     for (let i = 0; i < word.length; i++) {
         if (word[i] === picked) {
-            document.getElementsByClassName('span')[i].innerHTML = picked;
+            document.getElementsByClassName('clickMe')[i].innerHTML = picked;
             correctGuess += 1;
         } else if (word[i] !== picked) {
             chances -= 1;

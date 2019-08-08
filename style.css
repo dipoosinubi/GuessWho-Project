@@ -15,7 +15,9 @@ img {
     size: 50%;
     margin-left: 30%
 }
-
+span{
+    margin-right: 5px;
+}
 .Score{
     display: flex;
     justify-content: space-between;
