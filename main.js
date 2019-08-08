@@ -1,31 +1,47 @@
 
 //create variables
-let words = ["arsenal", "aston-villa", "bournemouth", "brighton", "burnley", "chelsea", "crystal-palace", "everton",
-    "leicester-city", "liverpool", "manchester-city", "manchester-united", "norwich-city",
-    "sheffield-united", "southhampton", "tottenham-hotspur", "watford", "westham-united", "wolverhampton"];
+let words = ["ARSENAL", "BOURNEMOUTH", "BRIGHTNON", "BURNLEY", "CHELSEA", "EVERTON",
+    "LEICESTER", "LIVERPOOL", "MANCHESTER", "NORWHICH", "SHEFFIELD",
+    "SOUTHHAMPTON", "TOTTENHAM", "WATFORD", "WOLVERHAMPTON"];
 
+let correctGuess;
+let wrongGuesses;
+let chances = 6;
+
+let blanks = document.getElementById("blanks");
 // creates word letters to choose from.
 let alphabets = document.getElementById("buttons");
 for (let i = 65; i < 91; i++) {
     let letters = document.createElement("input");
     letters.type = "button";
+    letters.className = "clickMe";
     letters.value = String.fromCharCode(i);
     alphabets.appendChild(letters);
+    letters.addEventListener('click', checkWord);
 }
 
 // randomize words 
 let word = words[Math.floor(Math.random() * words.length)];
 
-
 console.log(word);
 
-
 // create '*' based on the length of the word
-let blanks = document.getElementById("blanks");
 
 for (let i = 0; i < word.length; i++) {
     let hiddenWord = document.createElement('span');
-    hiddenWord.innerHTML = "*";
+    hiddenWord.innerHTML = "_";
     blanks.appendChild(hiddenWord);
 }
 
+function checkWord() {
+    for (let i = 0; i < word.length; i++) {
+        if (this.value !== word[i].charAt(0)) {
+            document.getElementsByName('span').innerHTML = "_";
+            wrongGuesses += 1;
+            words
+        } else if (this.value === word[i]) {
+            document.getElementsByName('span').innerHTML = this.value;
+            correctGuess += 1
+        }
+    }
+}
