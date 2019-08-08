@@ -47,8 +47,8 @@ function checkWord(event) {
             chances -= 1;
         }
     }
-    console.log('chances',chances)
-    if (chances < 1){
-        alert("YOU LOSE");
-    }
+    // console.log('chances',chances)
+    // if (chances < 1){
+    //     alert("YOU LOSE");
+    // }
 }
