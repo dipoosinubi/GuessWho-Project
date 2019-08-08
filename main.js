@@ -32,8 +32,13 @@ console.log(word);
 
 for (let i = 0; i < word.length; i++) {
     let hiddenWord = document.createElement('span');
-    hiddenWord.innerHTML = "_";
-    hiddenWord.value = String.fromCharCode(i)
+    if (word[i] === "-") {
+      hiddenWord.innerHTML = "-";
+      space = 1;
+    } else {
+      hiddenWord.innerHTML = "_";
+    }
+    break
     blanks.appendChild(hiddenWord);
 }
 
