@@ -8,3 +8,20 @@ body {
 h1{
     color: black;
 }
+img {
+    size: 50%;
+    margin-left: 25%
+}
+
+.Score{
+    color: black;
+}
+.reset{
+    display: flex;
+    justify-content: space-evenly;
+}
+#wordBlanks{
+   margin: 50px 0px;
+   margin-left: 30%;
+   font-size: 30px;
+}
