@@ -4,8 +4,8 @@ let words = ["ARSENAL", "BOURNEMOUTH", "BRIGHTNON", "BURNLEY", "CHELSEA", "EVERT
     "LEICESTER", "LIVERPOOL", "MANCHESTER", "NORWHICH", "SHEFFIELD",
     "SOUTHHAMPTON", "TOTTENHAM", "WATFORD", "WOLVERHAMPTON"];
 
-let correctGuess;
-let wrongGuesses;
+let correctGuess= 0;
+let wrongGuess= 0;
 let chances = 6;
 let pickedLetter = [];
 
@@ -38,17 +38,17 @@ for (let i = 0; i < word.length; i++) {
 }
 
 function checkWord(event) {
-    console.log('event', event.target)
-
     let picked = event.target.value;
-    console.log('picked', picked)
     for (let i = 0; i < word.length; i++) {
-        console.log(word[i])
         if (word[i] === picked) {
             document.getElementsByClassName('hiddenChar')[i].innerHTML = picked;
             correctGuess += 1;
         } else if (word[i] !== picked) {
             chances -= 1;
         }
+    }
+    console.log('chances',chances)
+    if (chances < 1){
+        alert("YOU LOSE");
     }
 }
