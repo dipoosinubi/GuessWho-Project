@@ -4,9 +4,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.container{
+    flex-direction: column;
+}
 .header{
+    border: solid;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 h1{
     color: black;
@@ -18,12 +22,14 @@ img {
 span{
     margin-right: 5px;
 }
-.Score{
+.score{
+    border: solid;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     color: black;
     size: 50px;
     font-size: 30px;
+    width:200px;
 }
 .reset{
     display: flex;
@@ -44,6 +50,7 @@ span{
     width: 39px;
     height: 60px;
     font-size: 30px;
+    margin-bottom: 50px;
 }
 #buttons{
     margin-left: 10%;

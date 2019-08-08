@@ -32,12 +32,8 @@ console.log(word);
 
 for (let i = 0; i < word.length; i++) {
     let hiddenWord = document.createElement('span');
-    if (word[i] === "-") {
-      hiddenWord.innerHTML = "-";
-      space = 1;
-    } else {
+    hiddenWord.className = "hiddenChar";
       hiddenWord.innerHTML = "_";
-    }
     blanks.appendChild(hiddenWord);
 }
 
@@ -47,8 +43,9 @@ function checkWord(event) {
     let picked = event.target.value;
     console.log('picked', picked)
     for (let i = 0; i < word.length; i++) {
+        console.log(word[i])
         if (word[i] === picked) {
-            document.getElementsByClassName('clickMe')[i].innerHTML = picked;
+            document.getElementsByClassName('hiddenChar')[i].innerHTML = picked;
             correctGuess += 1;
         } else if (word[i] !== picked) {
             chances -= 1;

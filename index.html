@@ -9,34 +9,36 @@
     <script defer src="main.js"></script>
 
     <title>Guess Who</title>
+</head>
+
+<body>
     <div class="header">
         <div>
             <h1>Premier Leauge Teams</h1>
         </div>
-        <div class= "Score">
+        <div class="score">
             <div>Score</div>
             <div>0</div>
         </div>
     </div>
-</head>
-
-<body>
     <div class="container">
-        <div class="messi"><img id="soccerBall" src="images/loss.jpg" alt="Messi's loss Image">
+        <aside></aside>
+        <div class=" main">
+            <div class="messi"><img id="soccerBall" src="images/loss.jpg" alt="Messi's loss Image">
+            </div>
+            <div id="wordBlanks">
+                <div id="blanks"> Guess This Premier Leauge Team: </div>
+            </div>
+            <div id="chances"> You have<span></span> chances left</div>
+            <div id="buttons">
+            </div>
+            <div class="reset">
+                <button>Reset</button>
+                <button>New Game</button>
+            </div>
         </div>
-        <div id="wordBlanks">
-            <div id="blanks"> Guess This Premier Leauge Team: </div>
-        </div>
-        <div id="chances"> You have<span></span> chances left</div>
-        <div id="buttons">
-
-        </div>
-        <div class="reset">
-            <button>Reset</button>
-            <button>New Game</button>
-        </div>
+        <aside></aside>
     </div>
-
 </body>
 
 </html>
