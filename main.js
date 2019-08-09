@@ -61,6 +61,8 @@ function checkWord(event) {
       document.getElementsByClassName('bg-modal')[0].style.display = 'flex';
     }
 };
-function(){
-    document.getElementsByClassName('.close')[0].addEventListener('click', )
+
+function resetGame(event){
+    event.preventDefault();
+    document.getElementsByClassName('bg-modal')[0].style.display = none;
 }
