@@ -47,15 +47,14 @@ function checkWord(event) {
             document.getElementsByClassName('hiddenChar')[i].innerHTML = picked;
             letterFound = true;
             correctGuess += 1;
-            console.log(correctGuess)
-    
         }
     }
     if (!letterFound) {
         wrongGuess += 1
     }
     let chancesLeft = (chances - wrongGuess)
-    document.getElementsByClassName('chancesLeft').innerHTML = chancesLeft;
-    console.log(chances - wrongGuess)
-    document.getElementById('soccerBall').style.opacity =  wrongGuess / chances;
-}
+    console.log(chancesLeft)
+    let scoreTest = document.getElementsByClassName('Left').innerHTML += chancesLeft;
+    console.log(scoreTest)
+    document.getElementById('soccerBall').style.opacity = wrongGuess / chances;
+};
