@@ -4,8 +4,8 @@ let words = ["ARSENAL", "BOURNEMOUTH", "BRIGHTNON", "BURNLEY", "CHELSEA", "EVERT
     "LEICESTER", "LIVERPOOL", "MANCHESTER", "NORWHICH", "SHEFFIELD",
     "SOUTHHAMPTON", "TOTTENHAM", "WATFORD", "WOLVERHAMPTON"];
 
-let correctGuess= 0;
-let wrongGuess= 0;
+let correctGuess = 0;
+let wrongGuess = 0;
 let chances = 6;
 let pickedLetter = [];
 
@@ -19,6 +19,7 @@ for (let i = 65; i < 91; i++) {
     letters.type = "button";
     letters.className = "clickMe";
     letters.value = String.fromCharCode(i);
+    letters.disabled = false;
     alphabets.appendChild(letters);
     letters.addEventListener('click', checkWord);
 }
@@ -33,22 +34,35 @@ console.log(word);
 for (let i = 0; i < word.length; i++) {
     let hiddenWord = document.createElement('span');
     hiddenWord.className = "hiddenChar";
-      hiddenWord.innerHTML = "_";
+    hiddenWord.innerHTML = "_";
     blanks.appendChild(hiddenWord);
 }
 
 function checkWord(event) {
+    let wrongGuess =0;
     let picked = event.target.value;
+    this.disabled = true;
     for (let i = 0; i < word.length; i++) {
         if (word[i] === picked) {
             document.getElementsByClassName('hiddenChar')[i].innerHTML = picked;
-            correctGuess += 1;
-        } else if (word[i] !== picked) {
-            chances -= 1;
+            break;
         }
-    }
+
+        if (word[i] !== picked) {
+            wrongGuess += 1;
+            console.log("wrongGuess")
+            document.getElementById('soccerBall').style.opacity = (1 - (wrongGuess/chances));
+            break;
+
+    //     }
+    // }
     // console.log('chances',chances)
     // if (chances < 1){
     //     alert("YOU LOSE");
-    // }
+    } 
+    }
+
+    // console.log('picked ', picked);
+    // console.log('letter at word[i]', word[i])
+        
 }
