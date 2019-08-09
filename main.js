@@ -52,9 +52,13 @@ function checkWord(event) {
     if (!letterFound) {
         wrongGuess += 1
     }
+
     let chancesLeft = (chances - wrongGuess)
-    console.log(chancesLeft)
-    let scoreTest = document.getElementsByClassName('Left')[0].innerHTML = chancesLeft;
-    console.log(scoreTest)
+    document.getElementsByClassName('Left')[0].innerHTML = chancesLeft;
     document.getElementById('soccerBall').style.opacity = wrongGuess / chances;
+
+    if ( chancesLeft === 0){
+        alert("YOU LOSE")
+    }
 };
+
