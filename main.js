@@ -45,24 +45,15 @@ function checkWord(event) {
     for (let i = 0; i < word.length; i++) {
         if (word[i] === picked) {
             document.getElementsByClassName('hiddenChar')[i].innerHTML = picked;
-            break;
         }
-
         if (word[i] !== picked) {
             wrongGuess += 1;
-            console.log("wrongGuess")
+            console.log(wrongGuess)
             document.getElementById('soccerBall').style.opacity = (1 - (wrongGuess/chances));
-            break;
-
-    //     }
-    // }
+        }
+    }
     // console.log('chances',chances)
     // if (chances < 1){
     //     alert("YOU LOSE");
-    } 
-    }
-
-    // console.log('picked ', picked);
-    // console.log('letter at word[i]', word[i])
-        
+    // }
 }
