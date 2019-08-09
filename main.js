@@ -54,7 +54,7 @@ function checkWord(event) {
     }
     let chancesLeft = (chances - wrongGuess)
     console.log(chancesLeft)
-    let scoreTest = document.getElementsByClassName('Left').innerHTML += chancesLeft;
+    let scoreTest = document.getElementsByClassName('Left')[0].innerHTML = chancesLeft;
     console.log(scoreTest)
     document.getElementById('soccerBall').style.opacity = wrongGuess / chances;
 };
