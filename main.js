@@ -58,7 +58,9 @@ function checkWord(event) {
     document.getElementById('soccerBall').style.opacity = wrongGuess / chances;
 
     if ( chancesLeft === 0){
-        alert("YOU LOSE")
+      document.getElementsByClassName('bg-modal')[0].style.display = 'flex';
     }
 };
-
+function(){
+    document.getElementsByClassName('.close')[0].addEventListener('click', )
+}
