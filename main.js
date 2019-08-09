@@ -7,12 +7,11 @@ let words = ["ARSENAL", "BOURNEMOUTH", "BRIGHTNON", "BURNLEY", "CHELSEA", "EVERT
 let correctGuess = 0;
 let wrongGuess = 0;
 let chances = 6;
-
-
 let blanks = document.getElementById("blanks");
-// creates word letters to choose from.
 let alphabets = document.getElementById("buttons");
 
+
+//create alphabent alphabets to click on
 
 for (let i = 65; i < 91; i++) {
     let letters = document.createElement("input");
@@ -26,18 +25,16 @@ for (let i = 65; i < 91; i++) {
 
 // randomize words 
 let word = words[Math.floor(Math.random() * words.length)];
-
 console.log(word);
 
-// create '*' based on the length of the word
-
+// create placeholding underscored based on the length of the word
 for (let i = 0; i < word.length; i++) {
     let hiddenWord = document.createElement('span');
     hiddenWord.className = "hiddenChar";
     hiddenWord.innerHTML = "_";
     blanks.appendChild(hiddenWord);
 }
-
+// compare the clicked letter with the letters in the word and replaces its respective placeholder.
 function checkWord(event) {
     let letterFound = false;
     let picked = event.target.value;
@@ -47,24 +44,34 @@ function checkWord(event) {
             document.getElementsByClassName('hiddenChar')[i].innerHTML = picked;
             letterFound = true;
             correctGuess += 1;
+            console.log(correctGuess)
         }
     }
+// if letter isnt found, count down the number of chances left and increase number of wrong guesses
     if (!letterFound) {
         wrongGuess += 1
     }
-
     let chancesLeft = (chances - wrongGuess)
     document.getElementsByClassName('Left')[0].innerHTML = chancesLeft;
     document.getElementById('soccerBall').style.opacity = wrongGuess / chances;
 
-    if ( chancesLeft === 0){
-      document.getElementsByClassName('bg-modal')[0].style.display = 'flex';
+// when chances is 0, display fail state
+    if (chancesLeft <= 0) {
+        document.getElementsByClassName('Left')[0].innerHTML = '0';
+        document.getElementsByClassName('bg-modal')[0].style.display = 'flex';
+
+    } 
+// when all words are found, display win start
+    else if (correctGuess == word.length) {
+        document.getElementsByClassName('Left')[0].innerHTML = '0';
+        document.getElementsByClassName('bg-modal')[0].style.display = 'flex';
+        document.getElementsByClassName('modalContent')[0].innerHTML = "YOU WIN, AWESOME!!!";
     }
 };
-   
+
 document.getElementsByClassName('close')[0].addEventListener('click', resetGame)
 
-function resetGame(event){
-    event.preventDefault();
-    document.getElementsByClassName('bg-modal')[0].style.display = 'none';
-}
+// function resetGame(event) {
+//     event.preventDefault();
+//     document.getElementsByClassName('bg-modal')[0].style.display = 'none';
+// }

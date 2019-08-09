@@ -15,10 +15,6 @@ body {
 h1{
     color: black;
 }
-img {
-    size: 50%;
-    margin-left: 30%
-}
 span{
     margin-right: 5px;
 }
@@ -57,6 +53,8 @@ span{
 }
 #soccerBall {
     opacity: 0;
+    size: 50%;
+    margin-left: 30%
 }
 .bg-modal{
         width: 100%;
