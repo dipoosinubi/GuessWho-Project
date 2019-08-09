@@ -7,7 +7,6 @@ let words = ["ARSENAL", "BOURNEMOUTH", "BRIGHTNON", "BURNLEY", "CHELSEA", "EVERT
 let correctGuess = 0;
 let wrongGuess = 0;
 let chances = 6;
-let pickedLetter = [];
 
 
 let blanks = document.getElementById("blanks");
@@ -47,15 +46,16 @@ function checkWord(event) {
         if (word[i] === picked) {
             document.getElementsByClassName('hiddenChar')[i].innerHTML = picked;
             letterFound = true;
+            correctGuess += 1;
+            console.log(correctGuess)
+    
         }
-
     }
     if (!letterFound) {
         wrongGuess += 1
-       
     }
     let chancesLeft = (chances - wrongGuess)
     document.getElementsByClassName('chancesLeft').innerHTML = chancesLeft;
     console.log(chances - wrongGuess)
-    document.getElementById('soccerBall').style.opacity = (1 - (chances/wrongGuess));
+    document.getElementById('soccerBall').style.opacity =  wrongGuess / chances;
 }
