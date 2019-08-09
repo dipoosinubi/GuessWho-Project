@@ -9,6 +9,7 @@ let wrongGuess = 0;
 let chances = 6;
 let pickedLetter = [];
 
+
 let blanks = document.getElementById("blanks");
 // creates word letters to choose from.
 let alphabets = document.getElementById("buttons");
@@ -39,21 +40,22 @@ for (let i = 0; i < word.length; i++) {
 }
 
 function checkWord(event) {
-    let wrongGuess =0;
+    let letterFound = false;
     let picked = event.target.value;
     this.disabled = true;
     for (let i = 0; i < word.length; i++) {
         if (word[i] === picked) {
             document.getElementsByClassName('hiddenChar')[i].innerHTML = picked;
+            letterFound = true;
         }
-        if (word[i] !== picked) {
-            wrongGuess += 1;
-            console.log(wrongGuess)
-            document.getElementById('soccerBall').style.opacity = (1 - (wrongGuess/chances));
-        }
+
     }
-    // console.log('chances',chances)
-    // if (chances < 1){
-    //     alert("YOU LOSE");
-    // }
+    if (!letterFound) {
+        wrongGuess += 1
+       
+    }
+    let chancesLeft = (chances - wrongGuess)
+    document.getElementsByClassName('chancesLeft').innerHTML = chancesLeft;
+    console.log(chances - wrongGuess)
+    document.getElementById('soccerBall').style.opacity = (1 - (chances/wrongGuess));
 }
