@@ -65,13 +65,13 @@ function checkWord(event) {
     else if (correctGuess == word.length) {
         document.getElementsByClassName('Left')[0].innerHTML = '0';
         document.getElementsByClassName('bg-modal')[0].style.display = 'flex';
-        document.getElementsByClassName('modalContent')[0].innerHTML = "YOU WIN, AWESOME!!!";
+        document.getElementById('fail').innerHTML = "YOU WIN, AWESOME!!!";
+        document.getElementById('emoji').setAttribute("src", "images/1.png");
     }
 };
 
 document.getElementsByClassName('close')[0].addEventListener('click', resetGame)
 
-// function resetGame(event) {
-//     event.preventDefault();
-//     document.getElementsByClassName('bg-modal')[0].style.display = 'none';
-// }
+function resetGame() {
+    document.location.reload();
+}
