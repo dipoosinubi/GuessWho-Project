@@ -61,8 +61,10 @@ function checkWord(event) {
       document.getElementsByClassName('bg-modal')[0].style.display = 'flex';
     }
 };
+   
+document.getElementsByClassName('close')[0].addEventListener('click', resetGame)
 
 function resetGame(event){
     event.preventDefault();
-    document.getElementsByClassName('bg-modal')[0].style.display = none;
+    document.getElementsByClassName('bg-modal')[0].style.display = 'none';
 }

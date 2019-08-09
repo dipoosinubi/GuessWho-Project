@@ -55,7 +55,7 @@ span{
 #buttons{
     margin-left: 10%;
 }
-img {
+#soccerBall {
     opacity: 0;
 }
 .bg-modal{
@@ -75,11 +75,14 @@ img {
     background-color: grey;
     border-radius: 4px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .close{
     position: absolute;
     top: 0;
-    right: 14px;
+    right: 50px;
     font-size: 42px;
     transform: rotate(45deg);
     cursor: pointer;
