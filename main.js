@@ -73,7 +73,6 @@ function checkWord(event) {
 document.getElementsByClassName('close')[0].addEventListener('click', closeModal)
 
 function closeModal(){
-    document.getElementsByClassName('clickMe').disabled = true;
     modal[0].style.display = 'none'; 
 }
 function resetGame() {
