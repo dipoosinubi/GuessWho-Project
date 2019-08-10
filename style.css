@@ -8,7 +8,6 @@ body {
     flex-direction: column;
 }
 .header{
-    border: solid;
     display: flex;
     justify-content: space-between;
 }
@@ -19,7 +18,6 @@ span{
     margin-right: 5px;
 }
 .score{
-    border: solid;
     display: flex;
     justify-content: space-evenly;
     color: black;
