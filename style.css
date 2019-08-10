@@ -1,6 +1,6 @@
 body {
     color: white;
-    background-image: url("images/background.jpg");
+    background-image: url("images/background\ 3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Luckiest Guy', cursive;
@@ -12,9 +12,6 @@ body {
     display: flex;
     justify-content: space-between;
     
-}
-h1{
-    color: black;
 }
 span{
     margin-right: 5px;

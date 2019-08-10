@@ -9,7 +9,7 @@ let wrongGuess = 0;
 let chances = 6;
 let blanks = document.getElementById("blanks");
 let alphabets = document.getElementById("buttons");
-
+let modal = document.getElementsByClassName('bg-modal');
 
 //create alphabent alphabets to click on
 
@@ -57,20 +57,25 @@ function checkWord(event) {
     // when chances is 0, display fail state
     if (chancesLeft <= 0) {
         document.getElementsByClassName('Left')[0].innerHTML = '0';
-        document.getElementsByClassName('bg-modal')[0].style.display = 'flex';
+        modal[0].style.display = 'flex';
 
     }
     // when all words are found, display win start
     else if (correctGuess == word.length) {
+
         document.getElementsByClassName('Left')[0].innerHTML = '0';
-        document.getElementsByClassName('bg-modal')[0].style.display = 'flex';
+        modal[0].style.display = 'flex';
         document.getElementById('fail').innerHTML = "YOU WIN, AWESOME!!!";
         document.getElementById('emoji').setAttribute("src", "images/1.png");
     }
 };
 
-document.getElementsByClassName('close')[0].addEventListener('click', resetGame)
+document.getElementsByClassName('close')[0].addEventListener('click', closeModal)
 
+function closeModal(){
+    document.getElementsByClassName('clickMe').disabled = true;
+    modal[0].style.display = 'none'; 
+}
 function resetGame() {
     document.location.reload();
 }
