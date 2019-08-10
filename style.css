@@ -1,8 +1,9 @@
 body {
     color: white;
-    background-image: url("images/soccerball.jpg");
+    background-image: url("images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Luckiest Guy', cursive;
 }
 .container{
     flex-direction: column;
@@ -10,6 +11,7 @@ body {
 .header{
     display: flex;
     justify-content: space-between;
+    
 }
 h1{
     color: black;

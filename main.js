@@ -44,10 +44,9 @@ function checkWord(event) {
             document.getElementsByClassName('hiddenChar')[i].innerHTML = picked;
             letterFound = true;
             correctGuess += 1;
-            console.log(correctGuess)
         }
     }
-// if letter isnt found, count down the number of chances left and increase number of wrong guesses
+    // if letter isnt found, count down the number of chances left and increase number of wrong guesses
     if (!letterFound) {
         wrongGuess += 1
     }
@@ -55,13 +54,13 @@ function checkWord(event) {
     document.getElementsByClassName('Left')[0].innerHTML = chancesLeft;
     document.getElementById('soccerBall').style.opacity = wrongGuess / chances;
 
-// when chances is 0, display fail state
+    // when chances is 0, display fail state
     if (chancesLeft <= 0) {
         document.getElementsByClassName('Left')[0].innerHTML = '0';
         document.getElementsByClassName('bg-modal')[0].style.display = 'flex';
 
-    } 
-// when all words are found, display win start
+    }
+    // when all words are found, display win start
     else if (correctGuess == word.length) {
         document.getElementsByClassName('Left')[0].innerHTML = '0';
         document.getElementsByClassName('bg-modal')[0].style.display = 'flex';
