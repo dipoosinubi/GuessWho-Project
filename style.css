@@ -10,8 +10,7 @@ body {
 }
 .header{
     display: flex;
-    justify-content: space-between;
-    
+    justify-content: space-between;   
 }
 span{
     margin-right: 5px;
@@ -23,6 +22,9 @@ span{
     size: 50px;
     font-size: 30px;
     width:200px;
+}
+img{
+    max-width: 100%;
 }
 .reset{
     display: flex;
@@ -40,15 +42,15 @@ span{
     margin-bottom: 40px;
 }
 .clickMe{
-    width: 39px;
-    height: 60px;
-    font-size: 30px;
+    width: 45px;
+    height: 90px;
+    font-size: 50px;
     margin-bottom: 50px;
 }
 #buttons{
     margin-left: 10%;
 }
-#soccerBall {
+#sadMessi {
     opacity: 0;
     size: 50%;
     margin-left: 30%
@@ -81,4 +83,14 @@ span{
     font-size: 42px;
     transform: rotate(45deg);
     cursor: pointer;
+}
+
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
 }

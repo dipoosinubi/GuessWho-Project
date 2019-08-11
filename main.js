@@ -11,7 +11,7 @@ let blanks = document.getElementById("blanks");
 let alphabets = document.getElementById("buttons");
 let modal = document.getElementsByClassName('bg-modal');
 
-//create alphabent alphabets to click on
+//create alphabets to click on
 
 for (let i = 65; i < 91; i++) {
     let letters = document.createElement("input");
@@ -34,7 +34,7 @@ for (let i = 0; i < word.length; i++) {
     hiddenWord.innerHTML = "_";
     blanks.appendChild(hiddenWord);
 }
-// compare the clicked letter with the letters in the word and replaces its respective placeholder.
+// compare the clicked letter with the letters in the word and replace it's respective placeholder.
 function checkWord(event) {
     let letterFound = false;
     let picked = event.target.value;
@@ -46,13 +46,13 @@ function checkWord(event) {
             correctGuess += 1;
         }
     }
-    // if letter isnt found, count down the number of chances left and increase number of wrong guesses
+    // if letter isn't found, count down the number of chances left and increase number of wrong guesses
     if (!letterFound) {
         wrongGuess += 1
     }
     let chancesLeft = (chances - wrongGuess)
     document.getElementsByClassName('Left')[0].innerHTML = chancesLeft;
-    document.getElementById('soccerBall').style.opacity = wrongGuess / chances;
+    document.getElementById('sadMessi').style.opacity = wrongGuess / chances;
 
     // when chances is 0, display fail state
     if (chancesLeft <= 0) {
@@ -65,16 +65,17 @@ function checkWord(event) {
 
         document.getElementsByClassName('Left')[0].innerHTML = '0';
         modal[0].style.display = 'flex';
-        document.getElementById('fail').innerHTML = "YOU WIN, AWESOME!!!";
+        document.getElementById('fail').innerHTML = "YOU WIN! AWESOME!!!";
         document.getElementById('emoji').setAttribute("src", "images/1.png");
     }
 };
-
+// close modal and return to game
 document.getElementsByClassName('close')[0].addEventListener('click', closeModal)
 
-function closeModal(){
-    modal[0].style.display = 'none'; 
-}
+function closeModal() {
+    modal[0].style.display = 'none';
+    document.querySelectorAll('.clickMe').disabled = true;
+};
 function resetGame() {
     document.location.reload();
-}
+};
