@@ -60,7 +60,7 @@ function checkWord(event) {
         modal[0].style.display = 'flex';
 
     }
-    // when all words are found, display win start
+    // when all words are found, display win state
     else if (correctGuess == word.length) {
 
         document.getElementsByClassName('Left')[0].innerHTML = '0';
@@ -74,7 +74,6 @@ document.getElementsByClassName('close')[0].addEventListener('click', closeModal
 
 function closeModal() {
     modal[0].style.display = 'none';
-    document.querySelectorAll('.clickMe').disabled = true;
 };
 function resetGame() {
     document.location.reload();
