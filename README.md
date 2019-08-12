@@ -33,6 +33,6 @@ Languages --> HTML, CSS3, JavaScript
 Libraries --> Javascript.
 <h2>FUTURE IMPROVEMENTS</h2>
 <ul>
-<li>Add scoreboard showing. </li>
+<li>Add scoreboard showing the number of words correctly guessed. </li>
 <li>Add more categories.</li>
 <li>Add some sound/music.</li>
