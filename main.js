@@ -1,8 +1,9 @@
 
 //create variables
-let words = ["ARSENAL", "BOURNEMOUTH", "BRIGHTNON", "BURNLEY", "CHELSEA", "EVERTON",
-    "LEICESTER", "LIVERPOOL", "MANCHESTER", "NORWHICH", "SHEFFIELD",
-    "SOUTHHAMPTON", "TOTTENHAM", "WATFORD", "WOLVERHAMPTON"];
+let words = ["ARSENAL","ASTON-VILLA","BOURNEMOUTH", "BRIGHTON", "BURNLEY", "CHELSEA","CRYSTAL-PALACE", "EVERTON",
+    "LEICESTER-CITY", "LIVERPOOL", "MANCHESTER-UNITED","MANCHESTER-CITY","NEWCASTLE-UNITED"
+    ,"NORWHICH-CITY", "SHEFFIELD-UNITED", "SOUTHHAMPTON", "TOTTENHAM-HOTSPUR", "WATFORD","WESTHAM-UNITED", "WOLVERHAMPTON"
+];
 
 let correctGuess = 0;
 let wrongGuess = 0;
@@ -11,8 +12,8 @@ let blanks = document.getElementById("blanks");
 let alphabets = document.getElementById("buttons");
 let modal = document.getElementsByClassName('bg-modal');
 
-//create alphabets to click on
 
+//create alphabets to click on
 for (let i = 65; i < 91; i++) {
     let letters = document.createElement("input");
     letters.type = "button";
@@ -27,11 +28,17 @@ for (let i = 65; i < 91; i++) {
 let word = words[Math.floor(Math.random() * words.length)];
 console.log(word);
 
-// create placeholding underscored based on the length of the word
+// create placeholding underscore or hyphen based on the length of the word
 for (let i = 0; i < word.length; i++) {
     let hiddenWord = document.createElement('span');
     hiddenWord.className = "hiddenChar";
-    hiddenWord.innerHTML = "_";
+    if (word[i] === "-") {
+        hiddenWord.innerHTML = "-";
+        correctGuess +=1 ;
+        console.log(correctGuess)
+    } else {
+        hiddenWord.innerHTML = "_";
+    }
     blanks.appendChild(hiddenWord);
 }
 // compare the clicked letter with the letters in the word and replace it's respective placeholder.
@@ -44,8 +51,10 @@ function checkWord(event) {
             document.getElementsByClassName('hiddenChar')[i].innerHTML = picked;
             letterFound = true;
             correctGuess += 1;
-        }
+            console.log(correctGuess)
+        } 
     }
+
     // if letter isn't found, count down the number of chances left and increase number of wrong guesses
     if (!letterFound) {
         wrongGuess += 1
@@ -58,8 +67,8 @@ function checkWord(event) {
     if (chancesLeft <= 0) {
         document.getElementsByClassName('Left')[0].innerHTML = '0';
         modal[0].style.display = 'flex';
-
     }
+
     // when all words are found, display win state
     else if (correctGuess == word.length) {
 
