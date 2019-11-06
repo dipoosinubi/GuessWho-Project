@@ -1,10 +1,5 @@
 # General Assembly SEI - Project 1
 
-
-Project:https://wonderful-wozniak-e5de9d.netlify.com
-
-GitHub: https://github.com/dipoosinubi/Hangman-Project
-
 * [Deployed App](https://wonderful-wozniak-e5de9d.netlify.com/)
 * [Project Board](https://github.com/dipoosinubi/Hangman-Project)
 
