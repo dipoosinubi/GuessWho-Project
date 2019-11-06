@@ -1,17 +1,20 @@
-# Hangman-Project
-
-General Assembly - Project 1
+# General Assembly SEI - Project 1
 
 
 Project:https://wonderful-wozniak-e5de9d.netlify.com
 
 GitHub: https://github.com/dipoosinubi/Hangman-Project
 
+* [Deployed App](https://wonderful-wozniak-e5de9d.netlify.com/)
+* [Project Board](https://github.com/dipoosinubi/Hangman-Project)
+
 <h2>
 OVERVIEW
 </h2>
 
 The goal of this project was to use HTML, CSS, and JavaScript to create a game that involved manipulating the DOM. I chose the challenge of creating this Hangman game because i believe it was a good way to put into practice what I have learnt so far in the Software Engineering Immersive course.
+
+![Screen Shot](images/screenShot.png)
 
 <h2>
 WIREFRAME
